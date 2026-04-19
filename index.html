@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lalacake</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: #f8f6db;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            font-family: "宋体";
+        }
+
+        /* 左边菜单 */
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #867f7f;
+            font-size: 25px;
+        }
+
+        .nav-menu a:hover {
+            color: #c9ad83;
+        }
+
+        .nav-user {
+            font-size: 25px;
+            color: #e3d49a;
+        }
+
+        /* ========== 黄色顶部板块 ========== */
+        body {
+            background-color: #f9e9ba;
+            min-height: 200vh;
+            padding-top: 60px;
+        }
+
+        .header-section {
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        /* 拱形白色文字 */
+        .curve-title {
+            font-size: 100px;
+            font-weight: bold;
+            color: #e3d49a;
+            margin-bottom: 40px;
+        }
+
+        .curve-title span {
+            display: inline-block;
+            transform-origin: center bottom;
+        }
+
+        .header-img {
+            width: 500px;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ========== 顶部固定导航栏 ========== -->
+    <div class="navbar">
+        <ul class="nav-menu">
+            <li><a href="#">蛋糕</a></li>
+            <li><a href="#">饮品</a></li>
+            <li><a href="#">品牌信息</a></li>
+        </ul>
+        <div class="nav-user"><a href="#" style="color: #9c773f;">账户</a></div>
+    </div>
+
+    <!-- ========== 黄色顶部标题+图片 ========== -->
+    <div class="header-section">
+        <h1 class="curve-title">
+            <span style="transform:rotate(-18deg)">l</span>
+            <span style="transform:rotate(-12deg)">a</span>
+            <span style="transform:rotate(-6deg)">l</span>
+            <span style="transform:rotate(0deg)">a</span>
+            <span style="transform:rotate(6deg)">c</span>
+            <span style="transform:rotate(12deg)">a</span>
+            <span style="transform:rotate(18deg)">k</span>
+            <span style="transform:rotate(24deg)">e</span>
+        </h1>
+        <img class="header-img" src="./img/retouch_2026041918122701.png" alt="照片">
+    </div>
+
+</body>
+
+</html>
