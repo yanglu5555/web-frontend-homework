@@ -28,7 +28,6 @@
             font-family: "宋体";
         }
 
-        /* 左边菜单 */
         .nav-menu {
             display: flex;
             gap: 30px;
@@ -50,19 +49,18 @@
             color: #e3d49a;
         }
 
-        /* ========== 黄色顶部板块 ========== */
         body {
             background-color: #f9e9ba;
             min-height: 200vh;
-            padding-top: 60px;
+            padding-top: 80px;
+            font-family: "宋体";
         }
 
         .header-section {
             text-align: center;
-            padding-top: 80px;
+            padding-top: 20px;
         }
 
-        /* 拱形白色文字 */
         .curve-title {
             font-size: 100px;
             font-weight: bold;
@@ -75,17 +73,110 @@
             transform-origin: center bottom;
         }
 
-        .header-img {
-            width: 500px;
-            height: auto;
+        /* 顶部轮播图 */
+        .banner {
+            width: 90%;
+            height: 400px;
+            margin: 0 auto 60px;
+            border-radius: 15px;
+            overflow: hidden;
+            background: url(./img/b1.jpg) center/cover no-repeat;
+            animation: slide 12s infinite;
+        }
+
+        @keyframes slide {
+            0% {
+                background: url(./img/b1.jpg) center/cover;
+            }
+
+            33% {
+                background: url(./img/b2.jpg) center/cover;
+            }
+
+            66% {
+                background: url(./img/b3.jpg) center/cover;
+            }
+
+            100% {
+                background: url(./img/b1.jpg) center/cover;
+            }
+        }
+
+        /* 产品区域 严格 一行3个 两行共6个 */
+        .product-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 40px;
+            color: #9c773f;
+            margin-bottom: 50px;
+        }
+
+        .product-box {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .item {
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
             border-radius: 10px;
+        }
+
+        .item h3 {
+            font-size: 22px;
+            color: #867f7f;
+            margin: 15px 0;
+        }
+
+        .item p {
+            color: #9c773f;
+            font-size: 18px;
+        }
+
+        /* 页脚 */
+        .footer {
+            background: #f8f6db;
+            padding: 50px 20px;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .footer h3 {
+            font-size: 28px;
+            color: #9c773f;
+            margin-bottom: 20px;
+        }
+
+        .footer p {
+            font-size: 20px;
+            color: #867f7f;
+            line-height: 1.8;
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            font-size: 18px;
+            color: #c9ad83;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- ========== 顶部固定导航栏 ========== -->
+    <!-- 导航栏 -->
     <div class="navbar">
         <ul class="nav-menu">
             <li><a href="#">蛋糕</a></li>
@@ -95,7 +186,7 @@
         <div class="nav-user"><a href="#" style="color: #9c773f;">账户</a></div>
     </div>
 
-    <!-- ========== 黄色顶部标题+图片 ========== -->
+    <!-- 店铺标题 -->
     <div class="header-section">
         <h1 class="curve-title">
             <span style="transform:rotate(-18deg)">l</span>
@@ -107,7 +198,58 @@
             <span style="transform:rotate(18deg)">k</span>
             <span style="transform:rotate(24deg)">e</span>
         </h1>
-        <img class="header-img" src="./img/retouch_2026041918122701.png" alt="照片">
+    </div>
+
+    <!-- 1.最顶部：轮播大图 -->
+    <div class="banner"></div>
+
+    <!-- 2.产品：第一行3个 + 第二行3个 -->
+    <div class="product-section">
+        <h2 class="section-title">精选产品</h2>
+        <div class="product-box">
+            <div class="item">
+                <img src="./img/cake1.jpg" alt="蛋糕">
+                <h3>草莓奶油蛋糕</h3>
+                <p>新鲜草莓 · 柔滑奶油</p>
+            </div>
+            <div class="item">
+                <img src="./img/cake2.jpg" alt="蛋糕">
+                <h3>巧克力慕斯</h3>
+                <p>浓郁巧克力 · 入口即化</p>
+            </div>
+            <div class="item">
+                <img src="./img/drink1.jpg" alt="饮品">
+                <h3>蜂蜜奶茶</h3>
+                <p>香甜蜂蜜 · 丝滑口感</p>
+            </div>
+
+            <div class="item">
+                <img src="./img/cake3.jpg" alt="蛋糕">
+                <h3>芒果千层蛋糕</h3>
+                <p>香甜芒果 · 层层软糯</p>
+            </div>
+            <div class="item">
+                <img src="./img/cake4.jpg" alt="蛋糕">
+                <h3>芋泥爆浆蛋糕</h3>
+                <p>手工芋泥 · 奶香浓郁</p>
+            </div>
+            <div class="item">
+                <img src="./img/drink2.jpg" alt="饮品">
+                <h3>杨枝甘露</h3>
+                <p>清爽果味 · 夏日必备</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部页脚 -->
+    <div class="footer">
+        <h3>lalacake · 给你甜蜜的每一天</h3>
+        <p>地址：XX市XX路XX号</p>
+        <p>营业时间：10:00 - 21:00</p>
+        <p>联系电话：123-4567-8901</p>
+        <div class="footer-bottom">
+            © 2025 lalacake 保留所有权利
+        </div>
     </div>
 
 </body>

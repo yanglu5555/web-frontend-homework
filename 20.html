@@ -211,6 +211,63 @@
             font-size: 18px;
         }
 
+        /* ===================== 【新增CSS：价格+按钮+弹窗】 ===================== */
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e63946;
+            margin: 8px 0;
+        }
+
+        .detail-btn {
+            margin-top: 10px;
+            padding: 6px 18px;
+            background: #9c773f;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .detail-btn:hover {
+            background: #c9ad83;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 22px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        /* ===================== 【新增CSS结束】 ===================== */
+
         /* 页脚 */
         .footer {
             background: #f8f6db;
@@ -301,39 +358,63 @@
     <div class="product-section">
         <h2 class="section-title">精选产品</h2>
         <div class="product-box">
+            <!-- ===================== 【每个产品都新增：价格 + 按钮】 ===================== -->
             <div class="item">
                 <img src="./img/cake1.jpg" alt="蛋糕">
                 <h3>草莓奶油蛋糕</h3>
                 <p>新鲜草莓 · 柔滑奶油</p>
+                <p class="price">¥68</p> <!-- 新增 -->
+                <button class="detail-btn" onclick="showDetail(0)">查看配料</button> <!-- 新增 -->
             </div>
             <div class="item">
                 <img src="./img/cake2.jpg" alt="蛋糕">
                 <h3>巧克力慕斯</h3>
                 <p>浓郁巧克力 · 入口即化</p>
+                <p class="price">¥58</p> <!-- 新增 -->
+                <button class="detail-btn" onclick="showDetail(1)">查看配料</button> <!-- 新增 -->
             </div>
             <div class="item">
                 <img src="./img/drink1.jpg" alt="饮品">
                 <h3>蜂蜜奶茶</h3>
                 <p>香甜蜂蜜 · 丝滑口感</p>
+                <p class="price">¥18</p> <!-- 新增 -->
+                <button class="detail-btn" onclick="showDetail(2)">查看配料</button> <!-- 新增 -->
             </div>
 
             <div class="item">
                 <img src="./img/cake3.jpg" alt="蛋糕">
                 <h3>芒果千层蛋糕</h3>
                 <p>香甜芒果 · 层层软糯</p>
+                <p class="price">¥78</p> <!-- 新增 -->
+                <button class="detail-btn" onclick="showDetail(3)">查看配料</button> <!-- 新增 -->
             </div>
             <div class="item">
                 <img src="./img/cake4.jpg" alt="蛋糕">
                 <h3>芋泥爆浆蛋糕</h3>
                 <p>手工芋泥 · 奶香浓郁</p>
+                <p class="price">¥72</p> <!-- 新增 -->
+                <button class="detail-btn" onclick="showDetail(4)">查看配料</button> <!-- 新增 -->
             </div>
             <div class="item">
                 <img src="./img/drink2.jpg" alt="饮品">
                 <h3>杨枝甘露</h3>
                 <p>清爽果味 · 夏日必备</p>
+                <p class="price">¥22</p> <!-- 新增 -->
+                <button class="detail-btn" onclick="showDetail(5)">查看配料</button> <!-- 新增 -->
             </div>
+            <!-- ===================== 【产品新增结束】 ===================== -->
         </div>
     </div>
+
+    <!-- ===================== 【新增HTML：配料表弹窗】 ===================== -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle">产品名称</h3>
+            <p id="modalContent">配料表</p>
+        </div>
+    </div>
+    <!-- ===================== 【新增HTML结束】 ===================== -->
 
     <!-- 页脚 -->
     <div class="footer">
@@ -342,11 +423,12 @@
         <p>营业时间：10:00 - 21:00</p>
         <p>联系电话：123-4567-8901</p>
         <div class="footer-bottom">
-            © 2025 lalacake
+            © 2026 lalacake
         </div>
     </div>
 
     <script>
+        // 原有轮播代码 完全不动
         function startCarousel(id) {
             const box = document.getElementById(id);
             const items = box.querySelectorAll('.carousel-item');
@@ -382,9 +464,28 @@
                 show();
             }, 3000);
         }
-
         startCarousel('carousel1');
         startCarousel('carousel2');
+
+        // ===================== 【新增JS：弹窗显示配料表】 =====================
+        const products = [
+            { name: "草莓奶油蛋糕", content: "配料：低筋面粉、鸡蛋、淡奶油、新鲜草莓、白砂糖、牛奶、黄油" },
+            { name: "巧克力慕斯", content: "配料：黑巧克力、淡奶油、鸡蛋、白砂糖、可可粉、牛奶、吉利丁" },
+            { name: "蜂蜜奶茶", content: "配料：红茶、纯牛奶、蜂蜜、冰糖" },
+            { name: "芒果千层蛋糕", content: "配料：千层皮、淡奶油、新鲜芒果、白砂糖、牛奶" },
+            { name: "芋泥爆浆蛋糕", content: "配料：芋头、淡奶油、鸡蛋、面粉、牛奶、黄油、白砂糖" },
+            { name: "杨枝甘露", content: "配料：西柚、芒果、椰奶、西米、冰糖" }
+        ];
+
+        function showDetail(index) {
+            document.getElementById("modalTitle").innerText = products[index].name;
+            document.getElementById("modalContent").innerText = products[index].content;
+            document.getElementById("modal").style.display = "flex";
+        }
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+        // ===================== 【新增JS结束】 =====================
     </script>
 
 </body>
