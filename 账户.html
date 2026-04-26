@@ -1,0 +1,51 @@
+<div id="userOverlay"
+  style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); display:none; z-index:2000;"
+  onclick="closeUser()">
+  <div id="userPanel"
+    style="width:350px; height:100%; background:#fff; transform:translateX(-100%); transition:0.4s; padding:30px; box-shadow: 2px 0 10px rgba(0,0,0,0.1);"
+    onclick="event.stopPropagation()">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:30px;">
+      <h2 id="authTitle" style="color:#333;">会员登录</h2>
+      <button onclick="closeUser()"
+        style="border:none; background:none; font-size:28px; cursor:pointer; color:#999;">&times;</button>
+    </div>
+
+    <div id="loginBox">
+      <div style="margin-bottom:15px;">
+        <label style="display:block; margin-bottom:8px; font-size:14px;">手机号</label>
+        <input type="text" id="loginPhone" placeholder="请输入手机号"
+          style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px; outline:none;">
+      </div>
+      <div style="margin-bottom:20px;">
+        <label style="display:block; margin-bottom:8px; font-size:14px;">密码</label>
+        <input type="password" id="loginPwd" placeholder="请输入密码"
+          style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px; outline:none;">
+      </div>
+      <button onclick="alert('登录逻辑待对接')"
+        style="width:100%; padding:12px; background:#9c773f; color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:bold;">立即登录</button>
+      <p style="margin-top:20px; text-align:center; font-size:14px; color:#666;">
+        还没有账号？<a href="javascript:void(0)" onclick="toggleAuth('reg')"
+          style="color:#9c773f; text-decoration:none;">立即注册</a>
+      </p>
+    </div>
+
+    <div id="regBox" style="display:none;">
+      <div style="margin-bottom:15px;">
+        <label style="display:block; margin-bottom:8px; font-size:14px;">手机号</label>
+        <input type="text" placeholder="请输入手机号"
+          style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px;">
+      </div>
+      <div style="margin-bottom:15px;">
+        <label style="display:block; margin-bottom:8px; font-size:14px;">设置密码</label>
+        <input type="password" placeholder="6-16位字符"
+          style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px;">
+      </div>
+      <button onclick="alert('注册成功')"
+        style="width:100%; padding:12px; background:#9c773f; color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:bold;">完成注册</button>
+      <p style="margin-top:20px; text-align:center; font-size:14px; color:#666;">
+        已有账号？<a href="javascript:void(0)" onclick="toggleAuth('login')"
+          style="color:#9c773f; text-decoration:none;">去登录</a>
+      </p>
+    </div>
+  </div>
+</div>

@@ -220,14 +220,14 @@
             position: absolute;
             top: 12px;
             left: 12px;
-            background: linear-gradient(135deg, #f28eb4, #d25977);
+            background: linear-gradient(135deg, #e63946, #c0392b);
             color: #fff;
             font-size: 13px;
             padding: 4px 12px;
             border-radius: 20px;
             font-weight: bold;
             letter-spacing: 1px;
-            box-shadow: 0 2px 8px rgba(248, 84, 84, 0.616);
+            box-shadow: 0 2px 8px rgba(230, 57, 70, 0.3);
         }
 
         .item .info {
@@ -264,7 +264,7 @@
         .item .price {
             font-size: 26px;
             font-weight: bold;
-            color: #f39aa1;
+            color: #f7a5ac;
             font-family: "Arial", sans-serif;
         }
 
@@ -840,7 +840,9 @@
             <li><a href="#">饮品</a></li>
             <li><a href="#">品牌信息</a></li>
         </ul>
-        <div class="nav-user"><a href="#" style="color: #9c773f;">账户</a></div>
+        <div class="nav-user">
+            <a href="javascript:void(0)" onclick="openUser()">账户</a>
+        </div>
     </div>
 
     <div class="header-section">
@@ -856,12 +858,15 @@
         </h1>
         <img class="header-img" src="./img/retouch_2026041918122701.png" alt="照片">
     </div>
+
+    <!-- 【已删除：原来的主轮播图 carousel1】 -->
+
     <h2 class="new-title">新品上市</h2>
-    <div class="carousel" id="carousel1">
+    <div class="carousel" id="carousel2">
         <div class="carousel-inner">
-            <div class="carousel-item active" style="background-image:url('./img/b1.jpg')"></div>
-            <div class="carousel-item" style="background-image:url('./img/b2.jpg')"></div>
-            <div class="carousel-item" style="background-image:url('./img/b3.jpg')"></div>
+            <div class="carousel-item active" style="background-image:url('./img/蛋挞.png')"></div>
+            <div class="carousel-item" style="background-image:url('./img/瑞士卷.png')"></div>
+            <div class="carousel-item" style="background-image:url('./img/阳光玫瑰.png')"></div>
         </div>
         <button class="prev">‹</button>
         <button class="next">›</button>
@@ -879,7 +884,7 @@
             <div class="item">
                 <div class="img-wrap">
                     <div class="tag">热销</div>
-                    <img src="./img/cake1.jpg" alt="草莓奶油蛋糕">
+                    <img src="./img/草莓奶油蛋糕.png" alt="草莓奶油蛋糕">
                 </div>
                 <div class="info">
                     <h3>草莓奶油蛋糕</h3>
@@ -894,7 +899,7 @@
 
             <div class="item">
                 <div class="img-wrap">
-                    <img src="./img/cake2.jpg" alt="巧克力慕斯">
+                    <img src="./img/巧克力慕斯.png" alt="巧克力慕斯">
                 </div>
                 <div class="info">
                     <h3>巧克力慕斯</h3>
@@ -909,7 +914,7 @@
 
             <div class="item">
                 <div class="img-wrap">
-                    <img src="./img/drink1.jpg" alt="蜂蜜奶茶">
+                    <img src="./img/蜂蜜奶茶.png" alt="蜂蜜奶茶">
                 </div>
                 <div class="info">
                     <h3>蜂蜜奶茶</h3>
@@ -924,7 +929,7 @@
 
             <div class="item">
                 <div class="img-wrap">
-                    <img src="./img/cake3.jpg" alt="芒果千层蛋糕">
+                    <img src="./img/芒果千层蛋糕.png" alt="芒果千层蛋糕">
                 </div>
                 <div class="info">
                     <h3>芒果千层蛋糕</h3>
@@ -940,7 +945,7 @@
             <div class="item">
                 <div class="img-wrap">
                     <div class="tag">推荐</div>
-                    <img src="./img/cake4.jpg" alt="芋泥爆浆蛋糕">
+                    <img src="./img/芋泥爆浆蛋糕.png" alt="芋泥爆浆蛋糕">
                 </div>
                 <div class="info">
                     <h3>芋泥爆浆蛋糕</h3>
@@ -955,7 +960,7 @@
 
             <div class="item">
                 <div class="img-wrap">
-                    <img src="./img/drink2.jpg" alt="杨枝甘露">
+                    <img src="./img/杨枝甘露.png" alt="杨枝甘露">
                 </div>
                 <div class="info">
                     <h3>杨枝甘露</h3>
@@ -1053,17 +1058,18 @@
                 show();
             }, 3000);
         }
-        startCarousel('carousel1');
+
+        // 【已删除：startCarousel('carousel1');】
         startCarousel('carousel2');
 
         // 配料弹窗
         const products = [
-            { name: "草莓奶油蛋糕", content: "配料：低筋面粉、鸡蛋、淡奶油、新鲜草莓、白砂糖、牛奶、黄油", price: 68, img: "./img/cake1.jpg" },
-            { name: "巧克力慕斯", content: "配料：黑巧克力、淡奶油、鸡蛋、白砂糖、可可粉、牛奶、吉利丁", price: 58, img: "./img/cake2.jpg" },
-            { name: "蜂蜜奶茶", content: "配料：红茶、纯牛奶、蜂蜜、冰糖", price: 18, img: "./img/drink1.jpg" },
-            { name: "芒果千层蛋糕", content: "配料：千层皮、淡奶油、新鲜芒果、白砂糖、牛奶", price: 78, img: "./img/cake3.jpg" },
-            { name: "芋泥爆浆蛋糕", content: "配料：芋头、淡奶油、鸡蛋、面粉、牛奶、黄油、白砂糖", price: 72, img: "./img/cake4.jpg" },
-            { name: "杨枝甘露", content: "配料：西柚、芒果、椰奶、西米、冰糖", price: 22, img: "./img/drink2.jpg" }
+            { name: "草莓奶油蛋糕", content: "配料：低筋面粉、鸡蛋、淡奶油、新鲜草莓、白砂糖、牛奶、黄油", price: 68, img: "./img/草莓奶油蛋糕.png" },
+            { name: "巧克力慕斯", content: "配料：黑巧克力、淡奶油、鸡蛋、白砂糖、可可粉、牛奶、吉利丁", price: 58, img: "./img/巧克力慕斯.png" },
+            { name: "蜂蜜奶茶", content: "配料：红茶、纯牛奶、蜂蜜、冰糖", price: 18, img: "./img/蜂蜜奶茶.png" },
+            { name: "芒果千层蛋糕", content: "配料：千层皮、淡奶油、新鲜芒果、白砂糖、牛奶", price: 78, img: "./img/芒果千层蛋糕.png" },
+            { name: "芋泥爆浆蛋糕", content: "配料：芋头、淡奶油、鸡蛋、面粉、牛奶、黄油、白砂糖", price: 72, img: "./img/芋泥爆浆蛋糕.png" },
+            { name: "杨枝甘露", content: "配料：西柚、芒果、椰奶、西米、冰糖", price: 22, img: "./img/杨枝甘露.png" }
         ];
 
         function showDetail(index) {
@@ -1146,7 +1152,7 @@
                 body.innerHTML = `
                     <div class="cart-empty">
                         <div class="empty-icon">🍰</div>
-                        <p>您还没有选择任何商品<br>快去挑选属于你的甜蜜吧~</p>
+                        <p>购物车还是空的哦~<br>快去挑选甜蜜吧</p>
                     </div>
                 `;
                 footer.style.display = 'none';
@@ -1203,5 +1209,6 @@
     </script>
 
 </body>
+<script src="账户.js"></script>
 
 </html>
