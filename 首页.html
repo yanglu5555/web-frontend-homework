@@ -836,9 +836,9 @@
 
     <div class="navbar">
         <ul class="nav-menu">
-            <li><a href="#">蛋糕</a></li>
-            <li><a href="#">饮品</a></li>
-            <li><a href="#">品牌信息</a></li>
+            <li><a href="蛋糕.html">蛋糕</a></li>
+            <li><a href="饮品.html">饮品</a></li>
+            <li><a href="javascript:openBrandModal();">品牌信息</a></li>
         </ul>
         <div class="nav-user">
             <a href="javascript:void(0)" onclick="openUser()">账户</a>
@@ -984,6 +984,21 @@
         </div>
     </div>
 
+    <!-- 品牌信息弹窗 -->
+    <div class="modal" id="brandModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBrandModal()">&times;</span>
+            <h3 style="margin-bottom: 15px;color:#9c773f;">🥧 关于 lalacake</h3>
+            <p style="line-height:1.8;color:#5c4a3a;">
+                lalacake 创立于2025年，<br>
+                坚持纯手工制作甜点与饮品，<br>
+                严选优质原料，低糖低脂，<br>
+                用心打造每一份甜蜜美味。<br><br>
+                品牌理念：<br>
+                「用甜点治愈日常，用温柔陪伴生活」
+            </p>
+        </div>
+    </div>
     <!-- 右下角购物车悬浮按钮 -->
     <div class="float-cart" id="floatCart" onclick="openCart()">
         🛒
@@ -1205,6 +1220,15 @@
             cart = cart.filter(c => c.id !== id);
             updateCartBadge();
             renderCart();
+        }
+
+        // 打开品牌弹窗
+        function openBrandModal() {
+            document.getElementById("brandModal").style.display = "flex";
+        }
+        // 关闭品牌弹窗
+        function closeBrandModal() {
+            document.getElementById("brandModal").style.display = "none";
         }
     </script>
 
