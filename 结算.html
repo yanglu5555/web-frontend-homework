@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>确认订单 - lalacake</title>
+  <link rel="stylesheet" href="结算.css">
+</head>
+
+<body>
+  <div class="checkout-container">
+    <div class="checkout-header">
+      <button class="back-btn" onclick="history.back()">‹ 返回</button>
+      <h1>确认订单</h1>
+    </div>
+
+    <div class="section-card">
+      <h3>📍 收货地址</h3>
+      <div class="address-info">
+        <p><strong>张三</strong> 138****8888</p>
+        <p>XX省 XX市 XX区 某某街道 lalacake旗舰店</p>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h3>🍰 订单详情</h3>
+      <div id="orderList">
+      </div>
+    </div>
+
+    <div class="checkout-footer">
+      <div class="total-bar">
+        <span>实付款：</span>
+        <span class="final-price">¥<span id="finalTotal">0</span></span>
+      </div>
+      <button class="pay-btn" onclick="handlePay()">立即支付</button>
+    </div>
+  </div>
+
+  <script src="结算.js"></script>
+</body>
+
+</html>

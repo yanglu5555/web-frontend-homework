@@ -24,7 +24,6 @@ function toggleAuth(mode) {
   document.getElementById('authTitle').innerText = isReg ? '新会员注册' : '会员登录';
 }
 
-// 自动加载 HTML 结构的函数 
 async function loadAccountComponent() {
   try {
     const response = await fetch('账户.html');
@@ -35,5 +34,5 @@ async function loadAccountComponent() {
   }
 }
 
-// 页面加载完成后自动载入 HTML 结构
+// 自动载入 HTML 结构
 window.addEventListener('DOMContentLoaded', loadAccountComponent);
