@@ -1,4 +1,3 @@
-// 控制开关与切换的逻辑
 function openUser() {
   const overlay = document.getElementById('userOverlay');
   const panel = document.getElementById('userPanel');
@@ -25,7 +24,7 @@ function toggleAuth(mode) {
   document.getElementById('authTitle').innerText = isReg ? '新会员注册' : '会员登录';
 }
 
-// 自动加载 HTML 结构的函数 (核心)
+// 自动加载 HTML 结构的函数 
 async function loadAccountComponent() {
   try {
     const response = await fetch('账户.html');
