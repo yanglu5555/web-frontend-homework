@@ -7,10 +7,10 @@ const products = [
   { name: "杨枝甘露", content: "配料：西柚、芒果、椰奶、西米、冰糖", price: 22, img: "./img/杨枝甘露.png" },
   { name: "手工蛋挞", content: "配料：蛋挞皮、鸡蛋、牛奶、淡奶油、白砂糖", price: 8, img: "./img/蛋挞.png" },
   { name: "抹茶瑞士卷", content: "配料：抹茶粉、低筋面粉、鸡蛋、淡奶油、白砂糖、牛奶", price: 28, img: "./img/瑞士卷.png" },
-  { name: "阳光玫瑰果茶", content: "配料：阳光玫瑰葡萄、绿茶、冰糖、柠檬汁", price: 24, img: "./img/阳光玫瑰.png" },
-  { name: "珍珠奶茶", content: "配料：红茶、牛奶、黑珍珠、果糖", price: 20, img: "./img/蜂蜜奶茶.png" },
-  { name: "芒果冰沙", content: "配料：新鲜芒果、冰块、糖浆、淡奶油", price: 26, img: "./img/杨枝甘露.png" },
-  { name: "鲜奶抹茶", content: "配料：抹茶粉、纯牛奶、白砂糖", price: 23, img: "./img/阳光玫瑰.png" }
+  { name: "阳光玫瑰果茶", content: "配料：阳光玫瑰葡萄、绿茶、冰糖、柠檬汁", price: 24, img: "./img/阳光玫瑰果茶.png" },
+  { name: "珍珠奶茶", content: "配料：红茶、牛奶、黑珍珠、果糖", price: 20, img: "./img/珍珠奶茶.png" },
+  { name: "芒果冰沙", content: "配料：新鲜芒果、冰块、糖浆、淡奶油", price: 26, img: "./img/芒果冰沙.png" },
+  { name: "鲜奶抹茶", content: "配料：抹茶粉、纯牛奶、白砂糖", price: 23, img: "./img/鲜奶抹茶.png" }
 ];
 
 let cart = [];
