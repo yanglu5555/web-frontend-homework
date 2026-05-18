@@ -1,0 +1,25 @@
+/* 手机端生效 */
+@media (max-width: 768px) {
+
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    width: 100% !important;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .content {
+    width: 100% !important;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+}
